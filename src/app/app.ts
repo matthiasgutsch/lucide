@@ -10,4 +10,6 @@ import { LucideAngularModule } from 'lucide-angular';
 })
 export class App {
   protected readonly title = signal('lucide');
+  protected strokeWidth = signal(2);
+  protected size = signal(28);
 }
