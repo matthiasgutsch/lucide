@@ -6,7 +6,7 @@ import { LucideAngularModule } from 'lucide-angular';
   selector: 'app-root',
   imports: [RouterOutlet, LucideAngularModule],
   templateUrl: './app.html',
-  styleUrl: './app.less'
+  styleUrl: './app.less',
 })
 export class App {
   protected readonly title = signal('lucide');
