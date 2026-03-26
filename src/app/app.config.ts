@@ -4,7 +4,7 @@ import { provideClientHydration, withEventReplay } from '@angular/platform-brows
 import { LucideAngularModule, Settings } from 'lucide-angular';
 
 import { routes } from './app.routes';
-import { MyDiamond, MyBolt } from './icons/custom-icons';
+import { MyDiamond, MyBolt, Speedo } from './icons/custom-icons';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -12,7 +12,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideClientHydration(withEventReplay()),
     importProvidersFrom(
-      LucideAngularModule.pick({ Settings, MyDiamond, MyBolt })
+      LucideAngularModule.pick({ Settings, MyDiamond, MyBolt, Speedo })
     ),
   ]
 };
