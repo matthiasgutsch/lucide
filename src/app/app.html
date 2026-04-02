@@ -20,8 +20,8 @@
       <input
         type="range"
         min="16"
-        max="64"
-        step="4"
+        max="264"
+        step="8"
         [value]="size()"
         (input)="size.set(+$any($event.target).value)"
       />
@@ -33,12 +33,12 @@
     <h2>Built-in</h2>
     <div class="icon-grid">
       <div class="icon-card">
-        <lucide-icon
-          name="settings"
-          [size]="size()"
-          [strokeWidth]="strokeWidth()"
-          color="#111111"
-        ></lucide-icon>
+        <dc-icon name="settings" [size]="size()" [strokeWidth]="strokeWidth()" color="#111111" />
+        <span>settings</span>
+      </div>
+
+      <div class="icon-card">
+        <dc-icon name="pencil" [size]="size()" [strokeWidth]="strokeWidth()" color="#111111" />
         <span>settings</span>
       </div>
     </div>
@@ -48,39 +48,28 @@
     <h2>Custom</h2>
     <div class="icon-grid">
       <div class="icon-card">
-        <lucide-icon
-          name="plus"
-          [size]="size()"
-          [strokeWidth]="strokeWidth()"
-          color="#111111"
-        ></lucide-icon>
+        <dc-icon name="plus" [size]="size()" [strokeWidth]="strokeWidth()" color="#111111" />
         <span>plus</span>
       </div>
       <div class="icon-card">
-        <lucide-icon
-          name="dc-diamond"
-          [size]="size()"
-          [strokeWidth]="strokeWidth()"
-          color="#111111"
-        ></lucide-icon>
+        <dc-icon name="diamond" [size]="size()" [strokeWidth]="strokeWidth()" color="#111111" />
         <span>DcDiamond</span>
       </div>
       <div class="icon-card">
-        <lucide-icon
-          name="dc-bolt"
-          [size]="size()"
-          [strokeWidth]="strokeWidth()"
-          color="#111111"
-        ></lucide-icon>
+        <dc-icon name="bolt" [size]="size()" [strokeWidth]="strokeWidth()" color="#111111" />
         <span>DcBolt</span>
       </div>
       <div class="icon-card">
-        <lucide-icon
-          name="dc-speedo"
+        <dc-icon
+          name="arrow-big-down"
           [size]="size()"
           [strokeWidth]="strokeWidth()"
           color="#111111"
-        ></lucide-icon>
+        />
+        <span>DcArrowBigDown</span>
+      </div>
+      <div class="icon-card">
+        <dc-icon name="speedo" [size]="size()" [strokeWidth]="strokeWidth()" color="#111111" />
         <span>DcSpeedo</span>
       </div>
     </div>
