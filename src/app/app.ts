@@ -2,13 +2,18 @@ import { Component, computed, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { LucideAngularModule } from 'lucide-angular';
 import { DcIconComponent } from './icons/dc-icon.component';
-
 export type ButtonSize = 'sm' | 'md' | 'lg';
 
 const SIZE_CONFIG: Record<ButtonSize, { size: number; strokeWidth: number }> = {
+  sm: { size: 16, strokeWidth: 2.35 },
+  md: { size: 20, strokeWidth: 2 },
+  lg: { size: 24, strokeWidth: 1.65 },
+};
+
+const SIZE_CONFIG_DEFAULT: Record<ButtonSize, { size: number; strokeWidth: number }> = {
   sm: { size: 16, strokeWidth: 1.65 },
-  md: { size: 24, strokeWidth: 2 },
-  lg: { size: 32, strokeWidth: 2.35 },
+  md: { size: 20, strokeWidth: 1.65 },
+  lg: { size: 24, strokeWidth: 1.65 },
 };
 
 @Component({
@@ -27,5 +32,9 @@ export class App {
 
   protected iconConfig(s: ButtonSize) {
     return SIZE_CONFIG[s];
+  }
+
+  protected iconConfigDefault(s: ButtonSize) {
+    return SIZE_CONFIG_DEFAULT[s];
   }
 }

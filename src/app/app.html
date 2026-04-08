@@ -11,7 +11,9 @@
             class="size-btn"
             [class.active]="selectedSize() === s"
             (click)="selectedSize.set(s)"
-          >{{ s }}</button>
+          >
+            {{ s }}
+          </button>
         }
       </div>
       <span class="value">{{ size() }}px · {{ strokeWidth() }}stroke</span>
@@ -25,7 +27,7 @@
         <div class="btn-demo">
           <button class="ui-btn btn-{{ s }}">
             <dc-icon
-              name="settings"
+              name="circle-check"
               [size]="iconConfig(s).size"
               [strokeWidth]="iconConfig(s).strokeWidth"
             />
@@ -33,7 +35,31 @@
           </button>
           <div class="btn-meta">
             <span class="btn-size-label">{{ s }}</span>
-            <span class="btn-stroke-label">{{ iconConfig(s).size }}px · {{ iconConfig(s).strokeWidth }} stroke</span>
+            <span class="btn-stroke-label"
+              >{{ iconConfig(s).size }}px · {{ iconConfig(s).strokeWidth }} stroke</span
+            >
+          </div>
+        </div>
+      }
+    </div>
+
+    <div class="btn-row">
+      @for (s of sizes; track s) {
+        <div class="btn-demo">
+          <button class="ui-btn btn-{{ s }}">
+            <dc-icon
+              name="check"
+              [size]="iconConfigDefault(s).size"
+              [strokeWidth]="iconConfigDefault(s).strokeWidth"
+            />
+            <span>Label</span>
+          </button>
+          <div class="btn-meta">
+            <span class="btn-size-label">{{ s }}</span>
+            <span class="btn-stroke-label"
+              >{{ iconConfigDefault(s).size }}px ·
+              {{ iconConfigDefault(s).strokeWidth }} stroke</span
+            >
           </div>
         </div>
       }
