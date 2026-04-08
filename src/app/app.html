@@ -4,28 +4,39 @@
 
   <div class="controls">
     <div class="control-group">
-      <label>Stroke Width</label>
-      <input
-        type="range"
-        min="0.5"
-        max="4"
-        step="0.5"
-        [value]="strokeWidth()"
-        (input)="strokeWidth.set(+$any($event.target).value)"
-      />
-      <span class="value">{{ strokeWidth() }}px</span>
-    </div>
-    <div class="control-group">
       <label>Size</label>
-      <input
-        type="range"
-        min="16"
-        max="264"
-        step="8"
-        [value]="size()"
-        (input)="size.set(+$any($event.target).value)"
-      />
-      <span class="value">{{ size() }}px</span>
+      <div class="size-toggle">
+        @for (s of sizes; track s) {
+          <button
+            class="size-btn"
+            [class.active]="selectedSize() === s"
+            (click)="selectedSize.set(s)"
+          >{{ s }}</button>
+        }
+      </div>
+      <span class="value">{{ size() }}px · {{ strokeWidth() }}stroke</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Buttons</h2>
+    <div class="btn-row">
+      @for (s of sizes; track s) {
+        <div class="btn-demo">
+          <button class="ui-btn btn-{{ s }}">
+            <dc-icon
+              name="settings"
+              [size]="iconConfig(s).size"
+              [strokeWidth]="iconConfig(s).strokeWidth"
+            />
+            <span>Label</span>
+          </button>
+          <div class="btn-meta">
+            <span class="btn-size-label">{{ s }}</span>
+            <span class="btn-stroke-label">{{ iconConfig(s).size }}px · {{ iconConfig(s).strokeWidth }} stroke</span>
+          </div>
+        </div>
+      }
     </div>
   </div>
 

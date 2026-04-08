@@ -99,7 +99,99 @@ h2 {
   font-weight: 500;
 }
 
-input[type='range'] {
-  width: 140px;
-  accent-color: #6366f1;
+.btn-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.btn-demo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.ui-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: inherit;
+  font-weight: 500;
+  border: none;
+  border-radius: 0.5rem;
+  background: #6366f1;
+  color: #fff;
+  cursor: pointer;
+  white-space: nowrap;
+
+  &:hover {
+    background: #4f46e5;
+  }
+
+  &.btn-sm {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.75rem;
+    border-radius: 0.375rem;
+  }
+
+  &.btn-md {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  &.btn-lg {
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+    border-radius: 0.625rem;
+  }
+}
+
+.btn-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.btn-size-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #374151;
+}
+
+.btn-stroke-label {
+  font-size: 0.65rem;
+  color: #9ca3af;
+}
+
+.size-toggle {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.size-btn {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.375rem;
+  background: #fff;
+  color: #6b7280;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  &:hover {
+    border-color: #6366f1;
+    color: #6366f1;
+  }
+
+  &.active {
+    background: #6366f1;
+    border-color: #6366f1;
+    color: #fff;
+  }
 }
