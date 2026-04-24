@@ -47,6 +47,33 @@ export const DcArrowBigDown: LucideIconData = [
   ],
 ];
 
+export const DcSpecrometer: LucideIconData = [
+  [
+    'circle',
+    {
+      cx: '12',
+      cy: '12',
+      r: '8',
+      fill: 'none',
+      stroke: 'currentColor',
+      'stroke-linecap': 'round',
+      'stroke-linejoin': 'round',
+      'shape-rendering': 'geometricPrecision',
+    },
+  ],
+  [
+    'path',
+    {
+      d: 'M9.6 12L11.2 13.6L14.4 10.4',
+      fill: 'none',
+      stroke: 'currentColor',
+      'stroke-linecap': 'round',
+      'stroke-linejoin': 'round',
+      'shape-rendering': 'geometricPrecision',
+    },
+  ],
+];
+
 export const DcSpeedo: LucideIconData = [
   [
     'path',

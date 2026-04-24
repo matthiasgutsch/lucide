@@ -1,0 +1,162 @@
+import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { DcIconComponent } from '../icons/dc-icon.component';
+
+export type IconStatus = 'same' | 'renamed' | 'custom';
+
+export interface IconEntry {
+  id: number;
+  uiKit: string;
+  lucide: string | null;
+  status: IconStatus;
+  note?: string;
+}
+
+export const ICON_MAP: IconEntry[] = [
+  { id: 1,   uiKit: 'arrow-up',                lucide: 'arrow-up',               status: 'same' },
+  { id: 2,   uiKit: 'arrow-down',              lucide: 'arrow-down',             status: 'same' },
+  { id: 3,   uiKit: 'arrow-left',              lucide: 'arrow-left',             status: 'same' },
+  { id: 4,   uiKit: 'arrow-right',             lucide: 'arrow-right',            status: 'same' },
+  { id: 5,   uiKit: 'chevron-up',              lucide: 'chevron-up',             status: 'same' },
+  { id: 6,   uiKit: 'chevron-down',            lucide: 'chevron-down',           status: 'same' },
+  { id: 7,   uiKit: 'chevron-left',            lucide: 'chevron-left',           status: 'same' },
+  { id: 8,   uiKit: 'chevron-right',           lucide: 'chevron-right',          status: 'same' },
+  { id: 9,   uiKit: 'chevron-first',           lucide: 'chevron-first',          status: 'same' },
+  { id: 10,  uiKit: 'chevron-last',            lucide: 'chevron-last',           status: 'same' },
+  { id: 11,  uiKit: 'add',                     lucide: 'plus',                   status: 'renamed' },
+  { id: 12,  uiKit: 'check',                   lucide: 'check',                  status: 'same' },
+  { id: 13,  uiKit: 'x',                       lucide: 'x',                      status: 'same' },
+  { id: 14,  uiKit: 'edit',                    lucide: 'pencil',                 status: 'same' },
+  { id: 15,  uiKit: 'trash',                   lucide: 'trash',                  status: 'same' },
+  { id: 16,  uiKit: 'delete',                  lucide: 'trash-2',                status: 'same' },
+  { id: 17,  uiKit: 'search',                  lucide: 'search',                 status: 'same' },
+  { id: 18,  uiKit: 'zoom-in',                 lucide: 'zoom-in',                status: 'same' },
+  { id: 19,  uiKit: 'zoom-out',               lucide: 'zoom-out',               status: 'same' },
+  { id: 20,  uiKit: 'reset-zoom',              lucide: 'search-x',               status: 'renamed' },
+  { id: 21,  uiKit: 'filter',                  lucide: 'funnel',                 status: 'renamed' },
+  { id: 22,  uiKit: 'sliders',                 lucide: 'sliders-horizontal',     status: 'same' },
+  { id: 23,  uiKit: 'reorder',                 lucide: null,                     status: 'custom', note: 'proposal: list-chevrons-up-down' },
+  { id: 24,  uiKit: 'move',                    lucide: 'move',                   status: 'same' },
+  { id: 25,  uiKit: 'expand',                  lucide: 'expand',                 status: 'same' },
+  { id: 26,  uiKit: 'shrink',                  lucide: 'shrink',                 status: 'same' },
+  { id: 27,  uiKit: 'expand-horizontal',       lucide: 'arrow-left-right',       status: 'same' },
+  { id: 28,  uiKit: 'expand-vertical',         lucide: 'arrow-up-down',          status: 'same' },
+  { id: 29,  uiKit: 'copy',                    lucide: 'copy',                   status: 'same' },
+  { id: 30,  uiKit: 'subtract',               lucide: 'minus',                  status: 'renamed' },
+  { id: 31,  uiKit: 'blocked',                 lucide: 'ban',                    status: 'renamed' },
+  { id: 32,  uiKit: 'cancel',                  lucide: 'circle-x',               status: 'renamed' },
+  { id: 33,  uiKit: 'checkmark',               lucide: 'circle-check',           status: 'renamed' },
+  { id: 34,  uiKit: 'importance',              lucide: 'circle-alert',           status: 'renamed' },
+  { id: 35,  uiKit: 'reset',                   lucide: 'rotate-ccw',             status: 'renamed' },
+  { id: 36,  uiKit: 'file',                    lucide: 'file',                   status: 'same' },
+  { id: 37,  uiKit: 'folder',                  lucide: 'folder',                 status: 'same' },
+  { id: 38,  uiKit: 'save',                    lucide: 'save',                   status: 'same' },
+  { id: 39,  uiKit: 'download',               lucide: 'download',               status: 'same' },
+  { id: 40,  uiKit: 'upload',                  lucide: 'upload',                 status: 'same' },
+  { id: 41,  uiKit: 'import',                  lucide: 'log-in',                 status: 'renamed' },
+  { id: 42,  uiKit: 'export',                  lucide: 'log-out',                status: 'renamed' },
+  { id: 43,  uiKit: 'bill',                    lucide: 'file-text',              status: 'same' },
+  { id: 44,  uiKit: 'notes',                   lucide: 'sticky-note',            status: 'same' },
+  { id: 45,  uiKit: 'tray',                    lucide: 'inbox',                  status: 'renamed' },
+  { id: 46,  uiKit: 'saved-changes',           lucide: 'save-all',               status: 'same' },
+  { id: 47,  uiKit: 'unsaved-changes',         lucide: 'file-pen',               status: 'same' },
+  { id: 48,  uiKit: 'file-export-pdf',         lucide: null,                     status: 'custom' },
+  { id: 49,  uiKit: 'file-export-xls',         lucide: null,                     status: 'custom' },
+  { id: 50,  uiKit: 'file-export-qtx',         lucide: null,                     status: 'custom' },
+  { id: 51,  uiKit: 'save-in-progress',        lucide: null,                     status: 'custom' },
+  { id: 52,  uiKit: 'home',                    lucide: 'house',                  status: 'renamed' },
+  { id: 53,  uiKit: 'menu-grid',               lucide: 'layout-grid',            status: 'same' },
+  { id: 54,  uiKit: 'list',                    lucide: 'list',                   status: 'same' },
+  { id: 55,  uiKit: 'hierarchy',               lucide: 'network',                status: 'renamed' },
+  { id: 56,  uiKit: 'more',                    lucide: 'ellipsis',               status: 'renamed' },
+  { id: 57,  uiKit: 'login',                   lucide: 'log-in',                 status: 'same' },
+  { id: 58,  uiKit: 'logout',                  lucide: 'log-out',                status: 'same' },
+  { id: 59,  uiKit: 'enter',                   lucide: 'corner-down-left',       status: 'same' },
+  { id: 60,  uiKit: 'avatar',                  lucide: 'user',                   status: 'renamed' },
+  { id: 61,  uiKit: 'people',                  lucide: 'users',                  status: 'renamed' },
+  { id: 62,  uiKit: 'group',                   lucide: 'users-round',            status: 'same' },
+  { id: 63,  uiKit: 'message',                 lucide: 'message-square',         status: 'same' },
+  { id: 64,  uiKit: 'message-text',            lucide: 'message-square-text',    status: 'same' },
+  { id: 65,  uiKit: 'send',                    lucide: 'send',                   status: 'same' },
+  { id: 66,  uiKit: 'bell',                    lucide: 'bell',                   status: 'same' },
+  { id: 67,  uiKit: 'info',                    lucide: 'info',                   status: 'same' },
+  { id: 68,  uiKit: 'help',                    lucide: 'circle-question-mark',            status: 'renamed' },
+  { id: 69,  uiKit: 'alert',                   lucide: 'triangle-alert',         status: 'renamed' },
+  { id: 70,  uiKit: 'thumbs-up',               lucide: 'thumbs-up',              status: 'same' },
+  { id: 71,  uiKit: 'thumbs-down',             lucide: 'thumbs-down',            status: 'same' },
+  { id: 72,  uiKit: 'star',                    lucide: 'star',                   status: 'same' },
+  { id: 73,  uiKit: 'heart',                   lucide: 'heart',                  status: 'same' },
+  { id: 74,  uiKit: 'history',                 lucide: 'history',                status: 'same' },
+  { id: 75,  uiKit: 'gear',                    lucide: 'settings',               status: 'renamed' },
+  { id: 76,  uiKit: 'tools',                   lucide: 'wrench',                 status: 'renamed' },
+  { id: 77,  uiKit: 'key',                     lucide: 'key',                    status: 'same' },
+  { id: 78,  uiKit: 'camera',                  lucide: 'camera',                 status: 'same' },
+  { id: 79,  uiKit: 'eye',                     lucide: 'eye',                    status: 'same' },
+  { id: 80,  uiKit: 'eye_disabled',            lucide: 'eye-off',                status: 'same' },
+  { id: 81,  uiKit: 'print',                   lucide: 'printer',                status: 'same' },
+  { id: 82,  uiKit: 'computer',               lucide: 'monitor',                status: 'renamed' },
+  { id: 83,  uiKit: 'mobile',                  lucide: 'smartphone',             status: 'renamed' },
+  { id: 84,  uiKit: 'calendar',               lucide: 'calendar',               status: 'same' },
+  { id: 85,  uiKit: 'cycle',                   lucide: 'refresh-cw',             status: 'same' },
+  { id: 86,  uiKit: 'chart',                   lucide: 'chart-bar',              status: 'renamed' },
+  { id: 87,  uiKit: 'gauge',                   lucide: 'gauge',                  status: 'same' },
+  { id: 88,  uiKit: 'selection',               lucide: 'rectangle-horizontal',   status: 'same' },
+  { id: 89,  uiKit: 'crosshairs',              lucide: 'crosshair',              status: 'same' },
+  { id: 90,  uiKit: 'layers',                  lucide: 'layers',                 status: 'same' },
+  { id: 91,  uiKit: 'circle',                  lucide: 'circle',                 status: 'same' },
+  { id: 92,  uiKit: 'dollar',                  lucide: 'dollar-sign',            status: 'same' },
+  { id: 93,  uiKit: 'euro',                    lucide: 'euro',                   status: 'same' },
+  { id: 94,  uiKit: 'pound',                   lucide: 'pound-sterling',         status: 'same' },
+  { id: 95,  uiKit: 'yen',                     lucide: 'japanese-yen',           status: 'same' },
+  { id: 96,  uiKit: 'cloud',                   lucide: 'cloud',                  status: 'same' },
+  { id: 97,  uiKit: 'globe',                   lucide: 'globe',                  status: 'same' },
+  { id: 98,  uiKit: 'shield',                  lucide: 'shield',                 status: 'same' },
+  { id: 99,  uiKit: 'text',                    lucide: 'type',                   status: 'renamed' },
+  { id: 100, uiKit: 'swatches',                lucide: 'swatch-book',            status: 'renamed' },
+  { id: 101, uiKit: 'palette',                 lucide: 'palette',                status: 'same' },
+  { id: 102, uiKit: 'bucket',                  lucide: 'paint-bucket',           status: 'same' },
+  { id: 103, uiKit: 'confetti',                lucide: 'party-popper',           status: 'renamed' },
+  { id: 104, uiKit: 'curves',                  lucide: 'spline',                 status: 'same' },
+  { id: 105, uiKit: 'drop',                    lucide: 'droplet',                status: 'same' },
+  { id: 106, uiKit: 'dropper',                 lucide: 'pipette',                status: 'same' },
+  { id: 107, uiKit: 'question',                lucide: 'circle-question-mark',            status: 'renamed' },
+  { id: 108, uiKit: 'add-grid',                lucide: 'grid-2x2-plus',          status: 'renamed' },
+  { id: 109, uiKit: 'add-stack',               lucide: 'layers-2',               status: 'same' },
+  { id: 110, uiKit: 'search-folder',           lucide: 'folder-search',          status: 'same' },
+  { id: 111, uiKit: 'leaf',                    lucide: 'leaf',                   status: 'same' },
+  { id: 112, uiKit: 'seat',                    lucide: null,                     status: 'custom' },
+  { id: 113, uiKit: 'not-dispense',            lucide: null,                     status: 'custom' },
+  { id: 114, uiKit: 'color-batch',             lucide: null,                     status: 'custom' },
+  { id: 115, uiKit: 'color-sample',            lucide: null,                     status: 'custom' },
+  { id: 116, uiKit: 'color-standard',          lucide: null,                     status: 'custom' },
+  { id: 117, uiKit: 'instrument-measure',      lucide: null,                     status: 'custom' },
+  { id: 118, uiKit: 'instrument-connected',    lucide: null,                     status: 'custom' },
+  { id: 119, uiKit: 'instrument-disconnected', lucide: null,                     status: 'custom' },
+  { id: 120, uiKit: 'datacolor',               lucide: null,                     status: 'custom' },
+  { id: 121, uiKit: 'paintco',                 lucide: null,                     status: 'custom' },
+  { id: 122, uiKit: 'amazingcolor',            lucide: null,                     status: 'custom' },
+  { id: 123, uiKit: 'standard',                lucide: null,                     status: 'custom' },
+];
+
+@Component({
+  selector: 'app-icon-map',
+  imports: [RouterLink, DcIconComponent],
+  templateUrl: './icon-map.html',
+  styleUrl: './icon-map.less',
+})
+export class IconMap {
+  protected readonly icons = ICON_MAP;
+  protected activeFilter: IconStatus | 'all' = 'all';
+
+  protected get filtered(): IconEntry[] {
+    if (this.activeFilter === 'all') return this.icons;
+    return this.icons.filter(i => i.status === this.activeFilter);
+  }
+
+  protected counts = {
+    all: ICON_MAP.length,
+    same: ICON_MAP.filter(i => i.status === 'same').length,
+    renamed: ICON_MAP.filter(i => i.status === 'renamed').length,
+    custom: ICON_MAP.filter(i => i.status === 'custom').length,
+  };
+}

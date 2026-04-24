@@ -1,5 +1,5 @@
 import { Component, computed, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { LucideAngularModule } from 'lucide-angular';
 import { DcIconComponent } from './icons/dc-icon.component';
 export type ButtonSize = 'sm' | 'md' | 'lg';
@@ -7,7 +7,7 @@ export type ButtonSize = 'sm' | 'md' | 'lg';
 const SIZE_CONFIG: Record<ButtonSize, { size: number; strokeWidth: number }> = {
   sm: { size: 16, strokeWidth: 2.35 },
   md: { size: 20, strokeWidth: 2 },
-  lg: { size: 24, strokeWidth: 1.65 },
+  lg: { size: 24, strokeWidth: 2 },
 };
 
 const SIZE_CONFIG_DEFAULT: Record<ButtonSize, { size: number; strokeWidth: number }> = {
@@ -18,7 +18,7 @@ const SIZE_CONFIG_DEFAULT: Record<ButtonSize, { size: number; strokeWidth: numbe
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, LucideAngularModule, DcIconComponent],
+  imports: [RouterOutlet, RouterLink, LucideAngularModule, DcIconComponent],
   templateUrl: './app.html',
   styleUrl: './app.less',
 })

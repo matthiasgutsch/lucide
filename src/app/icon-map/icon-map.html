@@ -1,0 +1,70 @@
+<div class="page">
+  <div class="page-header">
+    <div>
+      <h1>Icon Mapping</h1>
+      <p class="subtitle">UI Kit names mapped to Lucide equivalents.</p>
+    </div>
+    <a class="back-link" routerLink="/">← Icons</a>
+  </div>
+
+  <div class="filter-bar">
+    <button class="filter-btn" [class.active]="activeFilter === 'all'" (click)="activeFilter = 'all'">
+      All <span class="count">{{ counts.all }}</span>
+    </button>
+    <button class="filter-btn same" [class.active]="activeFilter === 'same'" (click)="activeFilter = 'same'">
+      Same <span class="count">{{ counts.same }}</span>
+    </button>
+    <button class="filter-btn renamed" [class.active]="activeFilter === 'renamed'" (click)="activeFilter = 'renamed'">
+      Renamed <span class="count">{{ counts.renamed }}</span>
+    </button>
+    <button class="filter-btn custom" [class.active]="activeFilter === 'custom'" (click)="activeFilter = 'custom'">
+      Custom <span class="count">{{ counts.custom }}</span>
+    </button>
+  </div>
+
+  <table class="map-table">
+    <thead>
+      <tr>
+        <th class="col-num">#</th>
+        <th>UI Kit name</th>
+        <th>Lucide name</th>
+        <th class="col-icon">Icon</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (icon of filtered; track icon.id) {
+        <tr [class]="icon.status">
+          <td class="col-num muted">{{ icon.id }}</td>
+          <td class="name-cell uikit-name"><code>{{ icon.uiKit }}</code></td>
+          <td class="name-cell">
+            @if (icon.lucide) {
+              <code>{{ icon.lucide }}</code>
+            } @else {
+              <span class="muted">—</span>
+            }
+          </td>
+          <td class="col-icon">
+            @if (icon.lucide) {
+              <dc-icon [name]="icon.lucide" [size]="20" [strokeWidth]="2" color="#111111" />
+            } @else {
+              <span class="placeholder-icon">?</span>
+            }
+          </td>
+          <td>
+            <span class="badge badge-{{ icon.status }}">
+              @switch (icon.status) {
+                @case ('same') { ✓ Same }
+                @case ('renamed') { ~ Renamed }
+                @case ('custom') { ★ Custom }
+              }
+            </span>
+            @if (icon.note) {
+              <span class="note">{{ icon.note }}</span>
+            }
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

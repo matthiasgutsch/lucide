@@ -8,6 +8,7 @@ const iconRegistry: Record<string, LucideIconData> = {
   document: customIcons.DcDocument,
   'arrow-big-down': customIcons.DcArrowBigDown,
   speedo: customIcons.DcSpeedo,
+  specrometer: customIcons.DcSpecrometer,
 };
 
 @Component({
