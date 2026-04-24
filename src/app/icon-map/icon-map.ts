@@ -10,6 +10,7 @@ export interface IconEntry {
   lucide: string | null;
   status: IconStatus;
   note?: string;
+  figmaImg?: string;
 }
 
 export const ICON_MAP: IconEntry[] = [
@@ -35,7 +36,7 @@ export const ICON_MAP: IconEntry[] = [
   { id: 20,  uiKit: 'reset-zoom',              lucide: 'search-x',               status: 'renamed' },
   { id: 21,  uiKit: 'filter',                  lucide: 'funnel',                 status: 'renamed' },
   { id: 22,  uiKit: 'sliders',                 lucide: 'sliders-horizontal',     status: 'same' },
-  { id: 23,  uiKit: 'reorder',                 lucide: null,                     status: 'custom', note: 'proposal: list-chevrons-up-down' },
+  { id: 23,  uiKit: 'reorder',                 lucide: null,                     status: 'custom', note: 'proposal: list-chevrons-up-down', figmaImg: 'https://www.figma.com/api/mcp/asset/d84c76db-7224-4599-be49-581843cce687' },
   { id: 24,  uiKit: 'move',                    lucide: 'move',                   status: 'same' },
   { id: 25,  uiKit: 'expand',                  lucide: 'expand',                 status: 'same' },
   { id: 26,  uiKit: 'shrink',                  lucide: 'shrink',                 status: 'same' },
@@ -60,10 +61,10 @@ export const ICON_MAP: IconEntry[] = [
   { id: 45,  uiKit: 'tray',                    lucide: 'inbox',                  status: 'renamed' },
   { id: 46,  uiKit: 'saved-changes',           lucide: 'save-all',               status: 'same' },
   { id: 47,  uiKit: 'unsaved-changes',         lucide: 'file-pen',               status: 'same' },
-  { id: 48,  uiKit: 'file-export-pdf',         lucide: null,                     status: 'custom' },
-  { id: 49,  uiKit: 'file-export-xls',         lucide: null,                     status: 'custom' },
-  { id: 50,  uiKit: 'file-export-qtx',         lucide: null,                     status: 'custom' },
-  { id: 51,  uiKit: 'save-in-progress',        lucide: null,                     status: 'custom' },
+  { id: 48,  uiKit: 'file-export-pdf',         lucide: null,                     status: 'custom', figmaImg: 'https://www.figma.com/api/mcp/asset/57627d41-d5d9-4083-9db8-bb20eb870bd1' },
+  { id: 49,  uiKit: 'file-export-xls',         lucide: null,                     status: 'custom', figmaImg: 'https://www.figma.com/api/mcp/asset/fdc4d4c5-af5c-4ce4-a87f-66309e1b4099' },
+  { id: 50,  uiKit: 'file-export-qtx',         lucide: null,                     status: 'custom', figmaImg: 'https://www.figma.com/api/mcp/asset/b9373ec1-4d16-4272-82f2-044ca5b38679' },
+  { id: 51,  uiKit: 'save-in-progress',        lucide: null,                     status: 'custom', figmaImg: 'https://www.figma.com/api/mcp/asset/a5756e66-20c0-457e-abdd-759568273272' },
   { id: 52,  uiKit: 'home',                    lucide: 'house',                  status: 'renamed' },
   { id: 53,  uiKit: 'menu-grid',               lucide: 'layout-grid',            status: 'same' },
   { id: 54,  uiKit: 'list',                    lucide: 'list',                   status: 'same' },
@@ -124,18 +125,18 @@ export const ICON_MAP: IconEntry[] = [
   { id: 109, uiKit: 'add-stack',               lucide: 'layers-2',               status: 'same' },
   { id: 110, uiKit: 'search-folder',           lucide: 'folder-search',          status: 'same' },
   { id: 111, uiKit: 'leaf',                    lucide: 'leaf',                   status: 'same' },
-  { id: 112, uiKit: 'seat',                    lucide: null,                     status: 'custom' },
-  { id: 113, uiKit: 'not-dispense',            lucide: null,                     status: 'custom' },
-  { id: 114, uiKit: 'color-batch',             lucide: null,                     status: 'custom' },
-  { id: 115, uiKit: 'color-sample',            lucide: null,                     status: 'custom' },
-  { id: 116, uiKit: 'color-standard',          lucide: null,                     status: 'custom' },
-  { id: 117, uiKit: 'instrument-measure',      lucide: null,                     status: 'custom' },
-  { id: 118, uiKit: 'instrument-connected',    lucide: null,                     status: 'custom' },
-  { id: 119, uiKit: 'instrument-disconnected', lucide: null,                     status: 'custom' },
+  { id: 112, uiKit: 'seat',                    lucide: null,                     status: 'custom', figmaImg: 'https://www.figma.com/api/mcp/asset/fdca1ed6-c24c-4014-ac47-1cbd4018084f' },
+  { id: 113, uiKit: 'not-dispense',            lucide: null,                     status: 'custom', figmaImg: 'https://www.figma.com/api/mcp/asset/8b9bd31a-3428-4aec-8f68-c70a264616c5' },
+  { id: 114, uiKit: 'color-batch',             lucide: null,                     status: 'custom', figmaImg: 'https://www.figma.com/api/mcp/asset/8d5d8a08-a85a-4ff2-aaa3-2c186d18072e' },
+  { id: 115, uiKit: 'color-sample',            lucide: null,                     status: 'custom', figmaImg: 'https://www.figma.com/api/mcp/asset/456e3271-9bfd-4190-bdcf-c0fbf4b28911' },
+  { id: 116, uiKit: 'color-standard',          lucide: null,                     status: 'custom', figmaImg: 'https://www.figma.com/api/mcp/asset/bf77e4ab-a0e3-432f-bb46-df70f787d727' },
+  { id: 117, uiKit: 'instrument-measure',      lucide: null,                     status: 'custom', figmaImg: 'https://www.figma.com/api/mcp/asset/a58a4fad-ac4f-49b8-ab03-152e01c912d3' },
+  { id: 118, uiKit: 'instrument-connected',    lucide: null,                     status: 'custom', figmaImg: 'https://www.figma.com/api/mcp/asset/0ae1e82f-9a15-418d-abe8-b0c651ad8515' },
+  { id: 119, uiKit: 'instrument-disconnected', lucide: null,                     status: 'custom', figmaImg: 'https://www.figma.com/api/mcp/asset/3d3c8cd2-2221-4fda-b45e-e149f20bd40c' },
   { id: 120, uiKit: 'datacolor',               lucide: null,                     status: 'custom' },
   { id: 121, uiKit: 'paintco',                 lucide: null,                     status: 'custom' },
   { id: 122, uiKit: 'amazingcolor',            lucide: null,                     status: 'custom' },
-  { id: 123, uiKit: 'standard',                lucide: null,                     status: 'custom' },
+  { id: 123, uiKit: 'standard',                lucide: null,                     status: 'custom', figmaImg: 'https://www.figma.com/api/mcp/asset/3d8b14e4-2b14-4ebb-acbd-162bf7f1339b' },
 ];
 
 @Component({

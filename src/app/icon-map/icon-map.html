@@ -27,8 +27,10 @@
       <tr>
         <th class="col-num">#</th>
         <th>UI Kit name</th>
+        <th class="col-icon">Old</th>
+        <th class="col-arrow"></th>
+        <th class="col-icon">New</th>
         <th>Lucide name</th>
-        <th class="col-icon">Icon</th>
         <th>Status</th>
       </tr>
     </thead>
@@ -37,6 +39,27 @@
         <tr [class]="icon.status">
           <td class="col-num muted">{{ icon.id }}</td>
           <td class="name-cell uikit-name"><code>{{ icon.uiKit }}</code></td>
+
+          <td class="col-icon">
+            @if (icon.figmaImg) {
+              <img class="figma-icon" [src]="icon.figmaImg" width="20" height="20" alt="" />
+            } @else if (icon.lucide) {
+              <dc-icon [name]="icon.lucide" [size]="20" [strokeWidth]="2" color="#9ca3af" />
+            } @else {
+              <span class="placeholder-icon">?</span>
+            }
+          </td>
+
+          <td class="col-arrow muted">→</td>
+
+          <td class="col-icon">
+            @if (icon.lucide) {
+              <dc-icon [name]="icon.lucide" [size]="20" [strokeWidth]="2" color="#111111" />
+            } @else {
+              <span class="placeholder-icon">—</span>
+            }
+          </td>
+
           <td class="name-cell">
             @if (icon.lucide) {
               <code>{{ icon.lucide }}</code>
@@ -44,13 +67,7 @@
               <span class="muted">—</span>
             }
           </td>
-          <td class="col-icon">
-            @if (icon.lucide) {
-              <dc-icon [name]="icon.lucide" [size]="20" [strokeWidth]="2" color="#111111" />
-            } @else {
-              <span class="placeholder-icon">?</span>
-            }
-          </td>
+
           <td>
             <span class="badge badge-{{ icon.status }}">
               @switch (icon.status) {
