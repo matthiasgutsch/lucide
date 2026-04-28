@@ -42,10 +42,10 @@ p.subtitle {
   font-weight: 500;
   margin-top: 0.5rem;
 
-  &:hover { text-decoration: underline; }
+  &:hover {
+    text-decoration: underline;
+  }
 }
-
-// Filter bar
 .filter-bar {
   display: flex;
   gap: 0.5rem;
@@ -66,19 +66,34 @@ p.subtitle {
   color: #6b7280;
   cursor: pointer;
 
-  &:hover { border-color: #d1d5db; color: #374151; }
+  &:hover {
+    border-color: #d1d5db;
+    color: #374151;
+  }
 
   &.active {
     background: #111827;
     border-color: #111827;
     color: #fff;
 
-    .count { background: rgba(255,255,255,0.2); color: #fff; }
+    .count {
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+    }
   }
 
-  &.same.active    { background: #16a34a; border-color: #16a34a; }
-  &.renamed.active { background: #d97706; border-color: #d97706; }
-  &.custom.active  { background: #7c3aed; border-color: #7c3aed; }
+  &.same.active {
+    background: #16a34a;
+    border-color: #16a34a;
+  }
+  &.renamed.active {
+    background: #d97706;
+    border-color: #d97706;
+  }
+  &.custom.active {
+    background: #7c3aed;
+    border-color: #7c3aed;
+  }
 }
 
 .count {
@@ -94,8 +109,6 @@ p.subtitle {
   background: #f3f4f6;
   color: #6b7280;
 }
-
-// Table
 .map-table {
   width: 100%;
   border-collapse: collapse;
@@ -124,16 +137,30 @@ p.subtitle {
     color: #374151;
   }
 
-  tr:last-child td { border-bottom: none; }
+  tr:last-child td {
+    border-bottom: none;
+  }
 
-  tr:hover td { background: #f9fafb; }
+  tr:hover td {
+    background: #f9fafb;
+  }
 }
 
-.col-num   { width: 48px; }
-.col-icon  { width: 44px; }
-.col-arrow { width: 24px; text-align: center; font-size: 0.75rem; }
+.col-num {
+  width: 48px;
+}
+.col-icon {
+  width: 44px;
+}
+.col-arrow {
+  width: 24px;
+  text-align: center;
+  font-size: 0.75rem;
+}
 
-.muted { color: #9ca3af; }
+.muted {
+  color: #9ca3af;
+}
 
 .name-cell code {
   font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
@@ -144,7 +171,9 @@ p.subtitle {
   color: #374151;
 }
 
-.uikit-name code { color: #6b7280; }
+.uikit-name code {
+  color: #6b7280;
+}
 
 .figma-icon {
   display: block;
@@ -165,8 +194,6 @@ p.subtitle {
   border: 1px dashed #d1d5db;
   border-radius: 4px;
 }
-
-// Status badges
 .badge {
   display: inline-flex;
   align-items: center;
@@ -177,9 +204,18 @@ p.subtitle {
   white-space: nowrap;
 }
 
-.badge-same    { background: #dcfce7; color: #15803d; }
-.badge-renamed { background: #fef9c3; color: #a16207; }
-.badge-custom  { background: #ede9fe; color: #6d28d9; }
+.badge-same {
+  background: #dcfce7;
+  color: #15803d;
+}
+.badge-renamed {
+  background: #fef9c3;
+  color: #a16207;
+}
+.badge-custom {
+  background: #ede9fe;
+  color: #6d28d9;
+}
 
 .note {
   display: block;
