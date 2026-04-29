@@ -3,12 +3,12 @@ import { LucideAngularModule, LucideIconData } from 'lucide-angular';
 import * as customIcons from './custom-icons';
 
 const iconRegistry: Record<string, LucideIconData> = {
-  diamond: customIcons.DcDiamond,
-  bolt: customIcons.DcBolt,
-  document: customIcons.DcDocument,
-  'arrow-big-down': customIcons.DcArrowBigDown,
-  speedo: customIcons.DcSpeedo,
-  specrometer: customIcons.DcSpecrometer,
+  'diamond-filled': customIcons.DcDiamond,
+  'bolt-circle': customIcons.DcBolt,
+  'document-text': customIcons.DcDocument,
+  'arrow-down-large': customIcons.DcArrowBigDown,
+  'gauge-speed': customIcons.DcSpeedo,
+  'test-tube': customIcons.DcSpecrometer,
 };
 
 @Component({
